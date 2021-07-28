@@ -6,12 +6,13 @@ namespace moodi.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {
+        public Command OpenGitHubRepo { get; }
+
         public AboutViewModel()
         {
             Title = "About";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
-        }
 
-        public ICommand OpenWebCommand { get; }
+            OpenGitHubRepo = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi"));
+        }
     }
 }
