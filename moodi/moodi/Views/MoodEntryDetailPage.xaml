@@ -2,16 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="moodi.Views.MoodEntryDetailPage"
-             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms"  
              xmlns:local="clr-namespace:moodi.ViewModels"
-             xmlns:model="clr-namespace:moodi.Models"
              Title="{Binding Title}">
 
-    <StackLayout VerticalOptions="Center" Padding="20" Spacing="20">
+    <ContentPage.BindingContext>
+        <local:MoodEntryDetailViewModel/>
+    </ContentPage.BindingContext>
 
+    <StackLayout Padding="20" Spacing="20">
 
-        <Label Text="Notes:" FontSize="Medium" />
-        <Label Text="{Binding Notes}" FontSize="Small"/>
+        <StackLayout HorizontalOptions="Center">
+            <ff:TintedCachedImage SvgSource="{Binding Mood.MoodImageSvgPath}" TintColor="{Binding Mood.MoodImageSvgHexColor}" HeightRequest="60" WidthRequest="60"/>
+            <Label Text="{Binding Mood.Date, StringFormat='{0: MMMM d, yyyy}'}" HorizontalTextAlignment="Center" FontSize="24"/>
+            <Label Text="{Binding Mood.Date, StringFormat='{0: h:mm:ss tt}'}" HorizontalTextAlignment="Center" FontSize="24"/>
+        </StackLayout>
+
+        <!-- Separator -->
+        <Line HeightRequest="2" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+        <Label Text="Notes:" FontSize="24" />
+        <Label Text="{Binding Mood.Notes}" FontSize="20"/>
 
     </StackLayout>
 
