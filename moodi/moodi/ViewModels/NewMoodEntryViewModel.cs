@@ -7,7 +7,7 @@ using moodi.Services;
 
 namespace moodi.ViewModels
 {
-    class NewMoodEntryViewModel : BaseMoodViewModel
+    class NewMoodEntryViewModel : BaseViewModel
     {
         private string _notes;
         private MoodImage _selectedMood;
@@ -51,7 +51,7 @@ namespace moodi.ViewModels
 
         public void InitMoodImage(SvgCachedImage svgImage)
         {
-            ApplyTintTransform(svgImage);
+            ViewModelUtils.ApplyTintTransform(svgImage);
             MoodSVGImages.Add(svgImage);
         }
 
@@ -65,7 +65,7 @@ namespace moodi.ViewModels
                 var prevMoodImgIndex = MoodImages.FindIndex(x => x == SelectedMood);
                 if (prevMoodImgIndex != -1)
                 {
-                    ApplyTintTransform(MoodSVGImages[prevMoodImgIndex]);
+                    ViewModelUtils.ApplyTintTransform(MoodSVGImages[prevMoodImgIndex]);
                 }
             }
 
@@ -73,7 +73,7 @@ namespace moodi.ViewModels
             if (moodImgIndex == -1)
                 return;
 
-            ApplyTintTransform(MoodSVGImages[moodImgIndex], moodImage);
+            ViewModelUtils.ApplyTintTransform(MoodSVGImages[moodImgIndex], moodImage);
             SelectedMood = moodImage;
             SaveCommand.ChangeCanExecute(); // can now save mood
         }

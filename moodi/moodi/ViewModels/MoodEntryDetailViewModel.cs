@@ -5,7 +5,7 @@ using Xamarin.Forms;
 namespace moodi.ViewModels
 {
     [QueryProperty(nameof(MoodEntryID), nameof(MoodEntryID))]
-    class MoodEntryDetailViewModel : BaseMoodViewModel
+    class MoodEntryDetailViewModel : BaseViewModel
     {
         private string _moodEntryID;
         private DateTime _date;

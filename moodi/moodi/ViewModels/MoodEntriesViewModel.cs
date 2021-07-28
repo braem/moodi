@@ -9,7 +9,7 @@ using moodi.Views;
 
 namespace moodi.ViewModels
 {
-    class MoodEntriesViewModel : BaseMoodViewModel
+    class MoodEntriesViewModel : BaseViewModel
     {
         private MoodEntry _selectedEntry;
 
