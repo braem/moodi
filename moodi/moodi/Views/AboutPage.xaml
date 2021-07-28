@@ -27,7 +27,7 @@
                 <Button Text="Privacy Policy"
                         Command="{Binding OpenPrivacyPolicy}"/>
                 <Button Text="GitHub Repository"
-                        Command="{Binding OpenGitHub}"/>
+                        Command="{Binding OpenGitHubRepo}"/>
             </StackLayout>
         </ScrollView>
     </Grid>
