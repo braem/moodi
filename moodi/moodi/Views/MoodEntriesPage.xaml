@@ -13,11 +13,11 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <StackLayout Padding="20,20,20,0">
-            <RefreshView x:Name="MoodRefreshView" x:DataType="local:MoodEntriesViewModel"
+        <RefreshView x:Name="MoodRefreshView" x:DataType="local:MoodEntriesViewModel"
                          Command="{Binding LoadMoodEntriesCommand}"
                          IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
                          RefreshColor="{StaticResource TertiaryColor}">
+            <StackLayout Padding="10,0,10,0">
                 <CollectionView x:Name="MoodEntriesListView"
                     ItemsSource="{Binding MoodEntries}"
                     SelectionMode="None">
@@ -63,8 +63,8 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </RefreshView>
-        </StackLayout>
+            </StackLayout>
+        </RefreshView>
 
         <Button Text="Add Mood" x:Name="AddMoodButton"
                     HorizontalOptions="FillAndExpand" VerticalOptions="End"
