@@ -54,13 +54,11 @@
                                 <!-- Separator -->
                                 <Line HeightRequest="2" BackgroundColor="{StaticResource QuaternaryColor}"/>
 
-                                <!--
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer NumberOfTapsRequired="1"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type local:MoodEntriesViewModel}}, Path=MoodEntryTapped}"		
                                         CommandParameter="{Binding .}"/>
                                 </StackLayout.GestureRecognizers>
-                                -->
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
