@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Xamarin.Forms;
+using moodi.Models;
 
 namespace moodi.ViewModels
 {
@@ -8,32 +9,26 @@ namespace moodi.ViewModels
     class MoodEntryDetailViewModel : BaseViewModel
     {
         private string _moodEntryID;
-        private DateTime _date;
-        private string _notes;
+        private MoodEntry _moodEntry;
 
         public MoodEntryDetailViewModel()
         {
             Title = "Mood Entry Detail";
         }
 
-        public DateTime Date
-        {
-            get => _date;
-            set => SetProperty(ref _date, value);
-        }
-        public string Notes
-        {
-            get => _notes;
-            set => SetProperty(ref _notes, value);
-        }
         public string MoodEntryID // needs to be a string for QueryProperty to work..
         {
-            get { return _moodEntryID; }
+            get => _moodEntryID;
             set
             {
                 _moodEntryID = value;
                 LoadMoodEntryID(int.Parse(value));
             }
+        }
+        public MoodEntry Mood
+        {
+            get => _moodEntry;
+            set => SetProperty(ref _moodEntry, value);
         }
 
         public async void LoadMoodEntryID(int moodEntryID)
@@ -41,8 +36,9 @@ namespace moodi.ViewModels
             try
             {
                 var entry = await App.Database.GetMoodEntry(moodEntryID);
-                Date = entry.Date;
-                Notes = entry.Notes;
+                Mood = entry;
+
+                Title = "Entry for " + entry.Date.ToString("MMM/d/yyyy");
             }
             catch (Exception)
             {
