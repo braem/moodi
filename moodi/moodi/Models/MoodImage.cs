@@ -1,9 +1,4 @@
-﻿using System;
-using FFImageLoading.Svg.Forms;
-using FFImageLoading.Transformations;
-using SQLite;
-
-namespace moodi.Models
+﻿namespace moodi.Models
 {
     public class MoodImage
     {

@@ -1,7 +1,7 @@
-﻿using FFImageLoading.Svg.Forms;
+﻿using Xamarin.Forms;
+using FFImageLoading.Svg.Forms;
 using FFImageLoading.Transformations;
 using FFImageLoading.Work;
-using Xamarin.Forms;
 
 namespace FFImageLoading.Forms
 {

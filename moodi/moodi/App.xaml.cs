@@ -1,7 +1,7 @@
-﻿using moodi.Services;
 ﻿using System;
 using System.IO;
 using Xamarin.Forms;
+using moodi.Services;
 
 namespace moodi
 {
