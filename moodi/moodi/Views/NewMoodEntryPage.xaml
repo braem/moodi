@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="moodi.Views.NewMoodEntryPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="{Binding Title}" 
+             xmlns:ff="clr-namespace:FFImageLoading.Forms"  
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:local="clr-namespace:moodi.ViewModels"
+             xmlns:model="clr-namespace:moodi.Models"
+             ios:Page.UseSafeArea="true"
+             x:Name="NewMoodEntryPagey">
+
+    <ContentPage.BindingContext>
+        <local:NewMoodEntryViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <Style TargetType="ffSvg:SvgCachedImage">
+            <Setter Property="WidthRequest" Value="45"/>
+            <Setter Property="HeightRequest" Value="45"/>
+            <Setter Property="DownsampleToViewSize" Value="true"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="Center" Padding="20" Spacing="20">
+
+        <StackLayout x:Name="MoodButtonLayout"
+                     BindableLayout.ItemsSource="{Binding MoodImages}"
+                     HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Grid x:DataType="model:MoodImage" HorizontalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"/>
+                        </Grid.RowDefinitions>
+                        <!-- Cannot do transforms here as they're unsupported with bindings :( -->
+                        <!-- See the viewmodel for how the tint transforms (recolorings) are applied -->
+                        <ffSvg:SvgCachedImage Source="{Binding SvgPath}"/>
+                        <!--<ff:TintedCachedImage SvgSource="{Binding SvgPath}" TintColor="{Binding SvgHexColor}" HeightRequest="45" WidthRequest="45"/>-->
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:NewMoodEntryViewModel}}, Path=MoodTapped}"
+                                CommandParameter="{Binding .}"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <StackLayout>
+            <Editor Text="{Binding Notes, Mode=TwoWay}" Placeholder="Add Note..." AutoSize="TextChanges"/>
+        </StackLayout>
+        <StackLayout Spacing="5" Orientation="Horizontal">
+            <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

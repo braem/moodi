@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="moodi.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="MoodVeryGoodColor">#a1ef7a</Color>
+            <Color x:Key="MoodGoodColor">#b0ef8e</Color>
+            <Color x:Key="MoodSmileColor">#baf19c</Color>
+            <Color x:Key="MoodMehColor">#dce9fc</Color>
+            <Color x:Key="MoodSadColor">#bbdef9</Color>
+            <Color x:Key="MoodBadColor">#9cd2f7</Color>
+            <Color x:Key="MoodDeadColor">#78c6f7</Color>
+            <Color x:Key="MoodInactive">#d3d3d3</Color>
+
+            <Color x:Key="BackgroundColor">#000000</Color>
+            <Color x:Key="QuaternaryColor">#101040</Color>
+            <Color x:Key="TertiaryColor">#202060</Color>
+            <Color x:Key="SecondaryColor">#602080</Color>
+            <Color x:Key="PrimaryColor">#B030B0</Color>
+            <Color x:Key="TextColor">#d3d3d3</Color>
+            <Color x:Key="InactiveTextColor">#a0a0a0</Color>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}"/>
+            </Style>
+
+            <Style TargetType="Button" ApplyToDerivedTypes="True">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource TertiaryColor}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style TargetType="Label" ApplyToDerivedTypes="True">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="PlaceholderColor" Value="{StaticResource InactiveTextColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

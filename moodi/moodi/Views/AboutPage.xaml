@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="moodi.Views.AboutPage"
+             xmlns:local="clr-namespace:moodi.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <local:AboutViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="20,20,20,20" Spacing="10">
+                <StackLayout Padding="0,0,0,20">
+                    <Label Text="Moodi" FontSize="Title"/>
+                    <Label Text="Moodi is a free and open source software for tracking moods." FontSize="16"/>
+                </StackLayout>
+
+                <Button Text="Terms of Use"
+                        Command="{Binding OpenTermsOfUse}"/>
+                <Button Text="Privacy Policy"
+                        Command="{Binding OpenPrivacyPolicy}"/>
+                <Button Text="GitHub Repository"
+                        Command="{Binding OpenGitHub}"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

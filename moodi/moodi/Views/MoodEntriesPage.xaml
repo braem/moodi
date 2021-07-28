@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="moodi.Views.MoodEntriesPage"
+             Title="{Binding Title}"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms"  
+             xmlns:local="clr-namespace:moodi.ViewModels"
+             xmlns:model="clr-namespace:moodi.Models"  
+             x:Name="BrowseMoodEntriesPage">
+
+    <ContentPage.BindingContext>
+        <local:MoodEntriesViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <StackLayout Padding="20,20,20,0">
+            <RefreshView x:Name="MoodRefreshView" x:DataType="local:MoodEntriesViewModel"
+                         Command="{Binding LoadMoodEntriesCommand}"
+                         IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                         RefreshColor="{StaticResource TertiaryColor}">
+                <CollectionView x:Name="MoodEntriesListView"
+                    ItemsSource="{Binding MoodEntries}"
+                    SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="0,10,0,0" x:DataType="model:MoodEntry">
+                                <Grid HorizontalOptions="Start" VerticalOptions="Start">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="30" >
+                                        <ff:TintedCachedImage
+                                            SvgSource="{Binding MoodImageInfo.SvgPath}"
+                                            TintColor="{Binding MoodImageInfo.SvgHexColor}" 
+                                            HeightRequest="30" WidthRequest="30"/>
+                                    </StackLayout>
+                                    <Label VerticalOptions="Center" Grid.Column="1" LineBreakMode="NoWrap" FontSize="20" Text="{Binding Date, StringFormat='{0: MMMM dd, yyyy}'}"/>
+                                </Grid>
+
+                                <FlexLayout>
+                                    <Label FontSize="15">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Notes}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </FlexLayout>
+
+                                <!-- Separator -->
+                                <Line HeightRequest="2" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+                                <!--
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:MoodEntriesViewModel}}, Path=MoodEntryTapped}"		
+                                        CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+                                -->
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+
+        <Button Text="Add Mood" x:Name="AddMoodButton"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="End"
+                    Command="{Binding AddMoodEntryCommand}"/>
+    </StackLayout>
+
+</ContentPage>

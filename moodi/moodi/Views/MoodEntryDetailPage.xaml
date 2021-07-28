@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="moodi.Views.MoodEntryDetailPage"
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:moodi.ViewModels"
+             xmlns:model="clr-namespace:moodi.Models"
+             Title="{Binding Title}">
+
+    <StackLayout VerticalOptions="Center" Padding="20" Spacing="20">
+
+
+        <Label Text="Notes:" FontSize="Medium" />
+        <Label Text="{Binding Notes}" FontSize="Small"/>
+
+    </StackLayout>
+
+</ContentPage>
