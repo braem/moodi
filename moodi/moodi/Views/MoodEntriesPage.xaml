@@ -34,8 +34,8 @@
                                     </Grid.ColumnDefinitions>
                                     <StackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="30" >
                                         <ff:TintedCachedImage
-                                            SvgSource="{Binding MoodImageInfo.SvgPath}"
-                                            TintColor="{Binding MoodImageInfo.SvgHexColor}" 
+                                            SvgSource="{Binding MoodImageSvgPath}"
+                                            TintColor="{Binding MoodImageSvgHexColor}" 
                                             HeightRequest="30" WidthRequest="30"/>
                                     </StackLayout>
                                     <Label VerticalOptions="Center" Grid.Column="1" LineBreakMode="NoWrap" FontSize="20" Text="{Binding Date, StringFormat='{0: MMMM dd, yyyy}'}"/>

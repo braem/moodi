@@ -18,6 +18,12 @@ namespace moodi.ViewModels
     {
         private MoodEntry _selectedEntry;
 
+        private bool _isBusy = false;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set { SetProperty(ref _isBusy, value); }
+        }
         public ObservableCollection<MoodEntry> MoodEntries { get; }
         public Command LoadMoodEntriesCommand{ get; }
         public Command AddMoodEntryCommand { get; }
@@ -42,9 +48,9 @@ namespace moodi.ViewModels
             try
             {
                 MoodEntries.Clear();
-                var entries = await MoodEntryDataStore.GetItemsAsync(true);
+                var entries = await App.Database.GetMoodEntries();
                 var tempList = entries.ToList();
-                tempList.Sort((x,y) => y.Date.CompareTo(x.Date));
+                tempList.Sort((x, y) => y.Date.CompareTo(x.Date));
                 foreach (var entry in tempList)
                 {
                     MoodEntries.Add(entry);
@@ -60,9 +66,9 @@ namespace moodi.ViewModels
             }
         }
 
-        public override void OnAppearing()
+        public void OnAppearing()
         {
-            base.OnAppearing();
+            IsBusy = true;
             SelectedMoodEntry = null;
         }
 

@@ -12,21 +12,11 @@ namespace moodi.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<MoodEntry> MoodEntryDataStore => DependencyService.Get<IDataStore<MoodEntry>>();
-        public IDataStore<MoodImage> MoodImageDataStore => DependencyService.Get<IDataStore<MoodImage>>();
-
-        bool isBusy = false;
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
-
-        string title = string.Empty;
+        private string _title = string.Empty;
         public string Title
         {
-            get { return title; }
-            set { SetProperty(ref title, value); }
+            get { return _title; }
+            set { SetProperty(ref _title, value); }
         }
 
         protected bool SetProperty<T>(ref T backingStore, T value,
