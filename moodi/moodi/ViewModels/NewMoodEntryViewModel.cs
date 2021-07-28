@@ -1,4 +1,5 @@
 ﻿using moodi.Models;
+using moodi.Services;
 using moodi.Views;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,8 @@ namespace moodi.ViewModels
 
         public List<SvgCachedImage> MoodSVGImages { get; set; }
 
+        public List<MoodImage> MoodImages { get; set; }
+
         public NewMoodEntryViewModel()
         {
             SaveCommand = new Command(OnSave, () => _selectedMood != null);
@@ -28,6 +31,8 @@ namespace moodi.ViewModels
             MoodTapped = new Command<MoodImage>(OnMoodTapped);
 
             MoodSVGImages = new List<SvgCachedImage>();
+
+            MoodImages = MoodImageStore.MoodImages;
 
             PropertyChanged += (_, __) => SaveCommand.ChangeCanExecute();
         }
@@ -43,9 +48,8 @@ namespace moodi.ViewModels
             set => SetProperty(ref _selectedMood, value);
         }
 
-        public override void OnAppearing()
+        public void OnAppearing()
         {
-            base.OnAppearing();
             SelectedMood = null;
         }
 
@@ -82,15 +86,13 @@ namespace moodi.ViewModels
         {
             MoodEntry newEntry = new MoodEntry()
             {
-                ID = Guid.NewGuid(),
                 Date = DateTime.Now,
-                MoodLevel = MoodImageDataStore.GetNumItems() - MoodImages.FindIndex(x => x == SelectedMood),
-                MaxMoodLevel = MoodImageDataStore.GetNumItems(),
                 Notes = Notes == null || Notes.Length == 0 ? "<No Note>" : Notes,
-                MoodImageInfo = SelectedMood
+                MoodImageSvgPath = SelectedMood.SvgPath,
+                MoodImageSvgHexColor = SelectedMood.SvgHexColor
             };
 
-            await MoodEntryDataStore.AddItemAsync(newEntry);
+            await App.Database.SaveMoodEntry(newEntry);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");

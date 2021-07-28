@@ -1,16 +1,26 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using SQLite;
 
 namespace moodi.Models
 {
-    public class MoodEntry : BaseModel
+    [Table("MoodEntry")]
+    public class MoodEntry
     {
-        public DateTime Date { get; set; }
-        public int MoodLevel { get; set; }
-        public int MaxMoodLevel { get; set; }
-        public string Notes { get; set; }
+        [PrimaryKey, AutoIncrement, Column("ID")]
+        public int ID { get; set; }
 
-        public MoodImage MoodImageInfo { get; set; }
+        [Column("Date")]
+        public DateTime Date { get; set; }
+
+        [Column("Notes")]
+        public string Notes { get; set; }
+        
+        [Column("SVGImagePath")]
+        public string MoodImageSvgPath { get; set; }
+
+        [Column("SVGImageColor")]
+        public string MoodImageSvgHexColor { get; set; }
     }
 }

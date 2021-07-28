@@ -17,12 +17,6 @@ namespace moodi.Views
         {
             base.OnAppearing();
             _viewModel.OnAppearing();
-
-            var aa = MoodEntriesListView.ItemsLayout;
-            foreach (var moodEntry in MoodEntriesListView.ItemsSource)
-            {
-                var item = moodEntry;
-            }
         }
     }
 }

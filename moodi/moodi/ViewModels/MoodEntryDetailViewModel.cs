@@ -9,19 +9,12 @@ namespace moodi.ViewModels
     {
         private string _moodEntryID;
         private DateTime _date;
-        private int _moodLevel;
         private string _notes;
-        public Guid ID { get; set; }
 
         public DateTime Date
         {
             get => _date;
             set => SetProperty(ref _date, value);
-        }
-        public int MoodLevel
-        {
-            get => _moodLevel;
-            set => SetProperty(ref _moodLevel, value);
         }
         public string Notes
         {
@@ -34,18 +27,16 @@ namespace moodi.ViewModels
             set
             {
                 _moodEntryID = value;
-                LoadMoodEntryID(Guid.Parse(value));
+                LoadMoodEntryID(int.Parse(value));
             }
         }
 
-        public async void LoadMoodEntryID(Guid moodEntryID)
+        public async void LoadMoodEntryID(int moodEntryID)
         {
             try
             {
-                var entry = await MoodEntryDataStore.GetItemAsync(moodEntryID);
-                ID = entry.ID;
+                var entry = await App.Database.GetMoodEntry(moodEntryID);
                 Date = entry.Date;
-                MoodLevel = entry.MoodLevel;
                 Notes = entry.Notes;
             }
             catch (Exception)
