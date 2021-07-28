@@ -22,6 +22,8 @@ namespace moodi.ViewModels
 
         public NewMoodEntryViewModel()
         {
+            Title = "New Mood Entry";
+
             SaveCommand = new Command(OnSave, () => _selectedMood != null);
             CancelCommand = new Command(async () => await Shell.Current.GoToAsync(".."));
             MoodTapped = new Command<MoodImage>(OnMoodTapped);

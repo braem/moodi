@@ -11,6 +11,11 @@ namespace moodi.ViewModels
         private DateTime _date;
         private string _notes;
 
+        public MoodEntryDetailViewModel()
+        {
+            Title = "Mood Entry Detail";
+        }
+
         public DateTime Date
         {
             get => _date;
