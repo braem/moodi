@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Xamarin.Forms;
 using moodi.Models;
 
 namespace moodi.Services
@@ -12,13 +13,13 @@ namespace moodi.Services
         {
             // TODO: Allow for 5 mood vs. 7 mood preset in user preferences
             _moodImages = new List<MoodImage>();
-            MoodImages.Add(new MoodImage { SvgPath = "verygood.svg", SvgHexColor = "#a1ef7a" });
-            MoodImages.Add(new MoodImage { SvgPath = "good.svg", SvgHexColor = "#b0ef8e" });
-            MoodImages.Add(new MoodImage { SvgPath = "smile.svg", SvgHexColor = "#baf19c" });
-            MoodImages.Add(new MoodImage { SvgPath = "meh.svg", SvgHexColor = "#dce9fc" });
-            MoodImages.Add(new MoodImage { SvgPath = "sad.svg", SvgHexColor = "#bbdef9" });
-            MoodImages.Add(new MoodImage { SvgPath = "bad.svg", SvgHexColor = "#9cd2f7" });
-            MoodImages.Add(new MoodImage { SvgPath = "facedead.svg", SvgHexColor = "#78c6f7" });
+            MoodImages.Add(new MoodImage { SvgPath = "verygood.svg", SvgHexColor = ((Color)Application.Current.Resources["MoodVeryGoodColor"]).ToHex() });
+            MoodImages.Add(new MoodImage { SvgPath = "good.svg", SvgHexColor = ((Color)Application.Current.Resources["MoodGoodColor"]).ToHex() });
+            MoodImages.Add(new MoodImage { SvgPath = "smile.svg", SvgHexColor = ((Color)Application.Current.Resources["MoodSmileColor"]).ToHex() });
+            MoodImages.Add(new MoodImage { SvgPath = "meh.svg", SvgHexColor = ((Color)Application.Current.Resources["MoodMehColor"]).ToHex() });
+            MoodImages.Add(new MoodImage { SvgPath = "sad.svg", SvgHexColor = ((Color)Application.Current.Resources["MoodSadColor"]).ToHex() });
+            MoodImages.Add(new MoodImage { SvgPath = "bad.svg", SvgHexColor = ((Color)Application.Current.Resources["MoodBadColor"]).ToHex() });
+            MoodImages.Add(new MoodImage { SvgPath = "facedead.svg", SvgHexColor = ((Color)Application.Current.Resources["MoodDeadColor"]).ToHex() });
         }
     }
 }
