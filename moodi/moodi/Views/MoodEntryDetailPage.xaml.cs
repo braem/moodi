@@ -1,5 +1,5 @@
-﻿using moodi.ViewModels;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using moodi.ViewModels;
 
 namespace moodi.Views
 {

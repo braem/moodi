@@ -1,13 +1,9 @@
-﻿using moodi.Models;
-using moodi.Services;
-using moodi.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using FFImageLoading.Svg.Forms;
-using FFImageLoading.Transformations;
+using moodi.Models;
+using moodi.Services;
 
 namespace moodi.ViewModels
 {

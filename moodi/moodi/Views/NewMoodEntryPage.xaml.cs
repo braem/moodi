@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using moodi.Models;
-using moodi.ViewModels;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using FFImageLoading.Svg.Forms;
+using moodi.ViewModels;
 
 namespace moodi.Views
 {
