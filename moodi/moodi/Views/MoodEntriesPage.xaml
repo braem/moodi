@@ -67,7 +67,7 @@
         </RefreshView>
 
         <Button Text="Add Mood" x:Name="AddMoodButton"
-                    HorizontalOptions="FillAndExpand" VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="End" CornerRadius="0"
                     Command="{Binding AddMoodEntryCommand}"/>
     </StackLayout>
 
