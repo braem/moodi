@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using moodi.Models;
 
@@ -9,13 +10,6 @@ namespace moodi.ViewModels
     class MoodEntryDetailViewModel : BaseViewModel
     {
         private string _moodEntryID;
-        private MoodEntry _moodEntry;
-
-        public MoodEntryDetailViewModel()
-        {
-            Title = "Mood Entry Detail";
-        }
-
         public string MoodEntryID // needs to be a string for QueryProperty to work..
         {
             get => _moodEntryID;
@@ -25,10 +19,21 @@ namespace moodi.ViewModels
                 LoadMoodEntryID(int.Parse(value));
             }
         }
+
+        private MoodEntry _moodEntry;
         public MoodEntry Mood
         {
             get => _moodEntry;
             set => SetProperty(ref _moodEntry, value);
+        }
+
+        public Command MoodEntryDeleted { get; }
+
+        public MoodEntryDetailViewModel()
+        {
+            Title = "Mood Entry Detail";
+
+            MoodEntryDeleted = new Command(async () => await DeleteMoodEntry());
         }
 
         public async void LoadMoodEntryID(int moodEntryID)
@@ -43,6 +48,21 @@ namespace moodi.ViewModels
             catch (Exception)
             {
                 Debug.WriteLine("Failed to Load Mood Entry");
+            }
+        }
+
+        private async Task DeleteMoodEntry()
+        {
+            try
+            {
+                await App.Database.DeleteMoodEntry(Mood);
+
+                // This will pop the current page off the navigation stack
+                await Shell.Current.GoToAsync("..");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
             }
         }
     }
