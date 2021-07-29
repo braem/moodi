@@ -1,6 +1,6 @@
-﻿using System.Windows.Input;
-using Xamarin.Essentials;
+﻿using Xamarin.Essentials;
 using Xamarin.Forms;
+using moodi.Views;
 
 namespace moodi.ViewModels
 {
@@ -8,6 +8,7 @@ namespace moodi.ViewModels
     {
         public Command OpenGitHubRepo { get; }
         public Command OpenLicense { get; }
+        public Command OpenThirdPartyPage { get; }
 
         public AboutViewModel()
         {
@@ -15,6 +16,7 @@ namespace moodi.ViewModels
 
             OpenGitHubRepo = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi"));
             OpenLicense = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi/blob/master/LICENSE"));
+            OpenThirdPartyPage = new Command(async () => await Shell.Current.GoToAsync(nameof(ThirdPartyPage)));
         }
     }
 }

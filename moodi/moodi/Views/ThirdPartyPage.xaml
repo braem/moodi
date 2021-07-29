@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="moodi.Views.ThirdPartyPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="{Binding Title}" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="Center" Padding="20" Spacing="20">
+        <Frame>
+            <StackLayout>
+                <Label Text="Xamarin Forms" FontSize="20"/>
+                <Label Text="MIT License" FontSize="16"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenXamarinFormsRepo}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame>
+            <StackLayout>
+                <Label Text="Xamarin FFImageLoading" FontSize="20"/>
+                <Label Text="MIT License" FontSize="16"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenFFImageLoadingRepo}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame>
+            <StackLayout>
+                <Label Text="CoreUI Icons" FontSize="20"/>
+                <Label Text="CC BY 4.0 License" FontSize="16"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenCoreUIRepo}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame>
+            <StackLayout>
+                <Label Text="SQLite.Net PCL" FontSize="20"/>
+                <Label Text="MIT License" FontSize="16"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenSQLiteNetRepo}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame>
+            <StackLayout>
+                <Label Text="Skiasharp" FontSize="20"/>
+                <Label Text="MIT License" FontSize="16"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenSkiasharpRepo}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
