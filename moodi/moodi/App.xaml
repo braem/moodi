@@ -46,6 +46,7 @@
                         </VisualStateGroup>
                     </VisualStateGroupList>
                 </Setter>
+                <Setter Property="CornerRadius" Value="6"/>
             </Style>
 
             <Style TargetType="Label" ApplyToDerivedTypes="True">
