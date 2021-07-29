@@ -13,53 +13,73 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
+
         <RefreshView x:Name="MoodRefreshView" x:DataType="local:MoodEntriesViewModel"
                          Command="{Binding LoadMoodEntriesCommand}"
                          IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
                          RefreshColor="{StaticResource TertiaryColor}">
-            <StackLayout Padding="10,0,10,0">
+            <StackLayout>
                 <CollectionView x:Name="MoodEntriesListView"
                     ItemsSource="{Binding MoodEntries}"
                     SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="0,10,0,0" x:DataType="model:MoodEntry">
-                                <Grid HorizontalOptions="Start" VerticalOptions="Start">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="30"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="30"/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <StackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="30" >
-                                        <ff:TintedCachedImage
-                                            SvgSource="{Binding MoodImageSvgPath}"
-                                            TintColor="{Binding MoodImageSvgHexColor}" 
-                                            HeightRequest="30" WidthRequest="30"/>
-                                    </StackLayout>
-                                    <Label VerticalOptions="Center" Grid.Column="1" LineBreakMode="NoWrap" FontSize="20" Text="{Binding Date, StringFormat='{0: MMMM dd, yyyy}'}"/>
-                                </Grid>
+                            <SwipeView BackgroundColor="{StaticResource BackgroundColor}">
+                                <SwipeView.RightItems>
+                                    <SwipeItems x:DataType="model:MoodEntry">
+                                        <SwipeItemView
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:MoodEntriesViewModel}}, Path=MoodEntryDeleted}"		
+                                            CommandParameter="{Binding .}">
+                                            <StackLayout Padding="10" WidthRequest="50" BackgroundColor="{StaticResource TertiaryColor}">
+                                                <ff:TintedCachedImage SvgSource="trash.svg"
+                                                    TintColor="{StaticResource PrimaryColor}"
+                                                    HorizontalOptions="Center"
+                                                    HeightRequest="54" WidthRequest="30"/>
+                                            </StackLayout>
+                                        </SwipeItemView>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
 
-                                <FlexLayout>
-                                    <Label FontSize="15">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Notes}"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                </FlexLayout>
+                                <StackLayout Padding="10,10,10,0" x:DataType="model:MoodEntry">
+                                    <Grid HorizontalOptions="Start" VerticalOptions="Start">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="2"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="30" >
+                                            <ff:TintedCachedImage
+                                                SvgSource="{Binding MoodImageSvgPath}"
+                                                TintColor="{Binding MoodImageSvgHexColor}" 
+                                                HeightRequest="30" WidthRequest="30"/>
+                                        </StackLayout>
 
-                                <!-- Separator -->
-                                <Line HeightRequest="2" BackgroundColor="{StaticResource QuaternaryColor}"/>
+                                        <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" LineBreakMode="NoWrap" FontSize="20" Text="{Binding Date, StringFormat='{0: MMMM dd, yyyy}'}"/>
 
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer NumberOfTapsRequired="1"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:MoodEntriesViewModel}}, Path=MoodEntryTapped}"		
-                                        CommandParameter="{Binding .}"/>
-                                </StackLayout.GestureRecognizers>
-                            </StackLayout>
+                                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="15" LineBreakMode="TailTruncation">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding Notes}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <!-- Separator -->
+                                        <Line Grid.Row="2" Grid.ColumnSpan="3" HeightRequest="2" BackgroundColor="{StaticResource QuaternaryColor}"/>
+                                    </Grid>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:MoodEntriesViewModel}}, Path=MoodEntryTapped}"		
+                                            CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </SwipeView>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
