@@ -61,6 +61,13 @@
 
                                         <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" LineBreakMode="NoWrap" FontSize="20" Text="{Binding Date, StringFormat='{0: MMMM dd, yyyy}'}"/>
 
+                                        <StackLayout Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" x:DataType="model:MoodEntry"
+                                            Padding="13" WidthRequest="23" HorizontalOptions="End" VerticalOptions="StartAndExpand">
+                                            <ff:TintedCachedImage SvgSource="chevrondoubleleft.svg"
+                                                TintColor="{StaticResource SecondaryColor}"
+                                                HorizontalOptions="End" HeightRequest="23" WidthRequest="23"/>
+                                        </StackLayout>
+
                                         <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="15" LineBreakMode="TailTruncation">
                                             <Label.FormattedText>
                                                 <FormattedString>
