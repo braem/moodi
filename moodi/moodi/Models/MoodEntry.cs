@@ -4,7 +4,7 @@ using SQLite;
 namespace moodi.Models
 {
     [Table("MoodEntry")]
-    public class MoodEntry
+    public class MoodEntry : IComparable
     {
         [PrimaryKey, AutoIncrement, Column("ID")]
         public int ID { get; set; }
@@ -20,5 +20,17 @@ namespace moodi.Models
 
         [Column("SVGImageColor")]
         public string MoodImageSvgHexColor { get; set; }
+
+        public int CompareTo(object other)
+        {
+            var otherEntry = (MoodEntry)other;
+            if (otherEntry == null)
+                return 1;
+
+            if (ID == otherEntry.ID)
+                return 0;
+
+            return 1;
+        }
     }
 }
