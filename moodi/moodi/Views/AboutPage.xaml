@@ -26,6 +26,8 @@
                         Command="{Binding OpenGitHubRepo}"/>
                 <Button Text="License"
                         Command="{Binding OpenLicense}"/>
+                <Button Text="Third Party Libraries"
+                        Command="{Binding OpenThirdPartyPage}"/>
             </StackLayout>
         </ScrollView>
     </Grid>
