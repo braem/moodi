@@ -113,6 +113,7 @@
     <AndroidResource Include="Resources\drawable\bad.svg" />
     <AndroidResource Include="Resources\drawable\verybad.svg" />
     <AndroidResource Include="Resources\drawable\facedead.svg" />
+    <AndroidResource Include="Resources\drawable\trash.svg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\moodi\moodi.csproj">
