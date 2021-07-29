@@ -13,7 +13,28 @@
     <StackLayout Padding="20" Spacing="20">
 
         <StackLayout HorizontalOptions="Center">
-            <ff:TintedCachedImage SvgSource="{Binding Mood.MoodImageSvgPath}" TintColor="{Binding Mood.MoodImageSvgHexColor}" HeightRequest="60" WidthRequest="60"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ff:TintedCachedImage Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center"
+                    SvgSource="{Binding Mood.MoodImageSvgPath}" TintColor="{Binding Mood.MoodImageSvgHexColor}"
+                    HeightRequest="60" WidthRequest="60"/>
+
+                <Frame Grid.Column="1" HeightRequest="50" WidthRequest="50" CornerRadius="50" Padding="0" Margin="0"
+                    BackgroundColor="{StaticResource TertiaryColor}" HorizontalOptions="End" VerticalOptions="Center" IsClippedToBounds="False">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                        <ff:TintedCachedImage
+                        SvgSource="trash.svg" TintColor="{StaticResource PrimaryColor}"
+                        WidthRequest="30" HeightRequest="30"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MoodEntryDeleted}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
             <Label Text="{Binding Mood.Date, StringFormat='{0: MMMM d, yyyy}'}" HorizontalTextAlignment="Center" FontSize="24"/>
             <Label Text="{Binding Mood.Date, StringFormat='{0: h:mm:ss tt}'}" HorizontalTextAlignment="Center" FontSize="24"/>
         </StackLayout>
@@ -21,7 +42,7 @@
         <!-- Separator -->
         <Line HeightRequest="2" BackgroundColor="{StaticResource QuaternaryColor}"/>
 
-        <Label Text="Notes:" FontSize="24" />
+        <Label Text="Notes:" FontSize="24"/>
         <Label Text="{Binding Mood.Notes}" FontSize="20"/>
 
     </StackLayout>
