@@ -22,10 +22,10 @@
                     <Label Text="moodi is a free and open source software for tracking moods." FontSize="16"/>
                 </StackLayout>
 
+                <Button Text="Source Code"
+                        Command="{Binding OpenGitHubRepo}"/>
                 <Button Text="License"
                         Command="{Binding OpenLicense}"/>
-                <Button Text="GitHub Repository"
-                        Command="{Binding OpenGitHubRepo}"/>
             </StackLayout>
         </ScrollView>
     </Grid>
