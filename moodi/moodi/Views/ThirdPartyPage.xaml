@@ -19,8 +19,8 @@
     <StackLayout VerticalOptions="Center" Padding="20" Spacing="20">
         <Frame>
             <StackLayout>
-                <Label Text="Xamarin Forms" FontSize="20"/>
-                <Label Text="MIT License" FontSize="16"/>
+                <Label Text="Xamarin Forms" FontSize="30"/>
+                <Label Text="MIT License"/>
             </StackLayout>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding OpenXamarinFormsRepo}"/>
@@ -28,8 +28,8 @@
         </Frame>
         <Frame>
             <StackLayout>
-                <Label Text="Xamarin FFImageLoading" FontSize="20"/>
-                <Label Text="MIT License" FontSize="16"/>
+                <Label Text="Xamarin FFImageLoading" FontSize="30"/>
+                <Label Text="MIT License"/>
             </StackLayout>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding OpenFFImageLoadingRepo}"/>
@@ -37,8 +37,8 @@
         </Frame>
         <Frame>
             <StackLayout>
-                <Label Text="CoreUI Icons" FontSize="20"/>
-                <Label Text="CC BY 4.0 License" FontSize="16"/>
+                <Label Text="CoreUI Icons" FontSize="30"/>
+                <Label Text="CC BY 4.0 License"/>
             </StackLayout>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding OpenCoreUIRepo}"/>
@@ -46,8 +46,8 @@
         </Frame>
         <Frame>
             <StackLayout>
-                <Label Text="SQLite.Net PCL" FontSize="20"/>
-                <Label Text="MIT License" FontSize="16"/>
+                <Label Text="SQLite.Net PCL" FontSize="30"/>
+                <Label Text="MIT License"/>
             </StackLayout>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding OpenSQLiteNetRepo}"/>
@@ -55,8 +55,8 @@
         </Frame>
         <Frame>
             <StackLayout>
-                <Label Text="Skiasharp" FontSize="20"/>
-                <Label Text="MIT License" FontSize="16"/>
+                <Label Text="Skiasharp" FontSize="30"/>
+                <Label Text="MIT License"/>
             </StackLayout>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding OpenSkiasharpRepo}"/>
