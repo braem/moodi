@@ -6,15 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ViewModels\LoginViewModel.cs" />
-    <Compile Remove="Views\LoginPage.xaml.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="Views\LoginPage.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="SkiaSharp" Version="2.80.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
