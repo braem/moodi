@@ -9,11 +9,11 @@
         <ResourceDictionary>
             <Color x:Key="MoodVeryGoodColor">#a1ef7a</Color>
             <Color x:Key="MoodGoodColor">#b0ef8e</Color>
-            <Color x:Key="MoodSmileColor">#baf19c</Color>
-            <Color x:Key="MoodMehColor">#dce9fc</Color>
-            <Color x:Key="MoodSadColor">#bbdef9</Color>
-            <Color x:Key="MoodBadColor">#9cd2f7</Color>
-            <Color x:Key="MoodDeadColor">#78c6f7</Color>
+            <Color x:Key="MoodSmileColor">#ccefda</Color>
+            <Color x:Key="MoodMehColor">#ccdaff</Color>
+            <Color x:Key="MoodSadColor">#628fda</Color>
+            <Color x:Key="MoodBadColor">#3f5c8d</Color>
+            <Color x:Key="MoodDeadColor">#1c2a40</Color>
             <Color x:Key="MoodInactive">#d3d3d3</Color>
 
             <Color x:Key="BackgroundColor">#000000</Color>
