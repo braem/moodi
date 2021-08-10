@@ -11,6 +11,10 @@
     <ContentPage.BindingContext>
         <local:MoodEntriesViewModel/>
     </ContentPage.BindingContext>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="info.png" Command="{Binding SettingsTapped}"/>
+    </ContentPage.ToolbarItems>
 
     <StackLayout>
 
