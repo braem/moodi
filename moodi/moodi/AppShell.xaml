@@ -18,8 +18,6 @@
                 <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource InactiveTextColor}"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource TextColor}"/>
             </Style>
-            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}"/>
-            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}"/>
         </ResourceDictionary>
     </Shell.Resources>
 
