@@ -18,7 +18,7 @@
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="20,20,20,20" Spacing="10">
                 <StackLayout Padding="0,0,0,20">
-                    <Label Text="moodi" FontSize="Title"/>
+                    <Label Text="{Binding AppAboutTitle}" FontSize="Title"/>
                     <Label Text="moodi is a free and open source software for tracking moods." FontSize="16"/>
                 </StackLayout>
 
