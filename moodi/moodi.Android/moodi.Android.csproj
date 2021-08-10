@@ -104,6 +104,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\splash_screen.9.png" />
     <AndroidResource Include="Resources\drawable\info.png" />
     <AndroidResource Include="Resources\drawable\list.png" />
+    <AndroidResource Include="Resources\drawable\moodi_logo.png" />
     <AndroidResource Include="Resources\drawable\verygood.svg" />
     <AndroidResource Include="Resources\drawable\good.svg" />
     <AndroidResource Include="Resources\drawable\smile.svg" />
