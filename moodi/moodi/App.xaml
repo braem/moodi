@@ -24,6 +24,10 @@
             <Color x:Key="TextColor">#d3d3d3</Color>
             <Color x:Key="InactiveTextColor">#a0a0a0</Color>
 
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
+            </Style>
+
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}"/>
             </Style>
