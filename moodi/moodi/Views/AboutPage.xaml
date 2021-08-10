@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="moodi.Views.AboutPage"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms"
              xmlns:local="clr-namespace:moodi.ViewModels"
              Title="{Binding Title}">
 
@@ -9,27 +10,59 @@
         <local:AboutViewModel/>
     </ContentPage.BindingContext>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <StackLayout>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="20,20,20,20" Spacing="20">
 
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="20,20,20,20" Spacing="10">
-                <StackLayout Padding="0,0,0,20">
-                    <Label Text="{Binding AppAboutTitle}" FontSize="40"/>
-                    <Label Text="moodi is a free and open source software for tracking moods."/>
+                <Image Source="moodi_logo.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFit"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="{Binding CurrentVersion}"/>
+                    <Label Text="{Binding License}" TextColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
 
-                <Button Text="Source Code"
-                        Command="{Binding OpenGitHubRepo}"/>
-                <Button Text="License"
-                        Command="{Binding OpenLicense}"/>
-                <Button Text="Third Party Libraries"
-                        Command="{Binding OpenThirdPartyPage}"/>
+                <Label Text="moodi is a free and open source app for tracking moods."/>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Author(s):" FontSize="30" HorizontalOptions="Center"/>
+                    <Frame Padding="5,5,5,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Author}" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="23" Padding="5,5,5,5"/>
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End" Spacing="15">
+                                <Frame BackgroundColor="{StaticResource TertiaryColor}" Padding="5,5,5,5" HeightRequest="25" WidthRequest="25">
+                                    <ff:TintedCachedImage SvgSource="github.svg"
+                                        TintColor="{StaticResource PrimaryColor}"
+                                        HorizontalOptions="Center"
+                                        HeightRequest="25" WidthRequest="25"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding OpenGHProfile}"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                                <Frame BackgroundColor="{StaticResource TertiaryColor}" Padding="5,5,5,5" HeightRequest="25" WidthRequest="25">
+                                    <ff:TintedCachedImage SvgSource="twitter.svg"
+                                        TintColor="{StaticResource PrimaryColor}"
+                                        HorizontalOptions="Center"
+                                        HeightRequest="25" WidthRequest="25"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding OpenTwitterProfile}"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="10" Margin="0,20,0,0">
+                    <Button Text="Source Code" Command="{Binding OpenGitHubRepo}"/>
+                    <Button Text="License" Command="{Binding OpenLicense}"/>
+                    <Button Text="Third Party Libraries" Command="{Binding OpenThirdPartyPage}"/>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
-    </Grid>
+    </StackLayout>
 
 </ContentPage>
