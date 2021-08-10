@@ -1,0 +1,39 @@
+name: App Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-android:
+    runs-on: windows-latest
+    
+    env:
+      POWERSHELL_TELEMETRY_OPTOUT: 1
+      APPLICATION_NAME: moodi
+      PACKAGE_NAME: com.brae.moodi
+      
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Build Solution
+        run: msbuild ./${{ env.APPLICATION_NAME }}.sln /restore /p:Configuration=Release
+
+      - name: Create APK
+        run: msbuild ${{ env.APPLICATION_NAME }}/${{ env.APPLICATION_NAME }}.Android/${{ env.APPLICATION_NAME }}.Android.csproj /t:SignAndroidPackage /p:Configuration=Release /p:OutputPath=bin\Release\
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.APPLICATION_NAME }}-android-${{ github.sha }}
+          path: |
+            ${{ env.APPLICATION_NAME }}/${{ env.APPLICATION_NAME }}.Android/bin/Release/*.apk
+            ${{ env.APPLICATION_NAME }}/${{ env.APPLICATION_NAME }}.Android/bin/Release/*.dll
+            ${{ env.APPLICATION_NAME }}/${{ env.APPLICATION_NAME }}.Android/bin/Release/*.pdb
+          if-no-files-found: error

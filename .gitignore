@@ -193,3 +193,6 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 .vscode/settings.json
+
+# App keystore (only accessible by brae)
+keystore/*
