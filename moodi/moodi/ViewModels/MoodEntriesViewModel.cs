@@ -34,6 +34,7 @@ namespace moodi.ViewModels
         public Command AddMoodEntryCommand { get; }
         public Command<MoodEntry> MoodEntryTapped { get; }
         public Command<MoodEntry> MoodEntryDeleted { get; }
+        public Command SettingsTapped { get; }
 
         public MoodEntriesViewModel()
         {
@@ -45,6 +46,8 @@ namespace moodi.ViewModels
 
             MoodEntryTapped = new Command<MoodEntry>(async (MoodEntry entry) => await OnMoodEntrySelected(entry));
             MoodEntryDeleted = new Command<MoodEntry>(async (MoodEntry entry) => await DeleteMoodEntry(entry));
+
+            SettingsTapped = new Command(async () => await Shell.Current.GoToAsync(nameof(AboutPage)));
         }
 
         public void OnAppearing()
