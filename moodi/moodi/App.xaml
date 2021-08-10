@@ -47,23 +47,29 @@
                     </VisualStateGroupList>
                 </Setter>
                 <Setter Property="CornerRadius" Value="6"/>
+                <Setter Property="FontFamily" Value="Surface-Medium"/>
+                <Setter Property="FontSize" Value="20"/>
             </Style>
 
             <Style TargetType="Label" ApplyToDerivedTypes="True">
                 <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                <Setter Property="FontFamily" Value="Surface-Medium"/>
+                <Setter Property="FontSize" Value="20"/>
             </Style>
 
             <Style TargetType="Entry">
                 <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
-                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="Surface-Medium"/>
+                <Setter Property="FontSize" Value="20"/>
             </Style>
 
             <Style TargetType="Editor">
                 <Setter Property="PlaceholderColor" Value="{StaticResource InactiveTextColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
-                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="Surface-Medium"/>
+                <Setter Property="FontSize" Value="20"/>
             </Style>
 
         </ResourceDictionary>        
