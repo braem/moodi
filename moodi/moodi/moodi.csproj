@@ -6,7 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Fonts\Surface_Medium.otf" />
+    <None Remove="Resources\Fonts\Comfortaa-Bold.ttf" />
+    <None Remove="Resources\Fonts\Comfortaa-Light.ttf" />
+    <None Remove="Resources\Fonts\Comfortaa-Medium.ttf" />
+    <None Remove="Resources\Fonts\Comfortaa-Regular.ttf" />
+    <None Remove="Resources\Fonts\Comfortaa-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\Comfortaa-VariableFont_wght.ttf" />
+    <None Remove="Resources\Fonts\OFL.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Comfortaa-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Comfortaa-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Comfortaa-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Comfortaa-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Comfortaa-SemiBold.ttf" />
   </ItemGroup>
 
   <ItemGroup>

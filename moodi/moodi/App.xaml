@@ -51,29 +51,29 @@
                     </VisualStateGroupList>
                 </Setter>
                 <Setter Property="CornerRadius" Value="6"/>
-                <Setter Property="FontFamily" Value="Surface-Medium"/>
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="Comfortaa-Regular"/>
+                <Setter Property="FontSize" Value="Medium"/>
             </Style>
 
             <Style TargetType="Label" ApplyToDerivedTypes="True">
                 <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
-                <Setter Property="FontFamily" Value="Surface-Medium"/>
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="Comfortaa-Regular"/>
+                <Setter Property="FontSize" Value="Medium"/>
             </Style>
 
             <Style TargetType="Entry">
                 <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
-                <Setter Property="FontFamily" Value="Surface-Medium"/>
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="Comfortaa-Regular"/>
+                <Setter Property="FontSize" Value="Medium"/>
             </Style>
 
             <Style TargetType="Editor">
                 <Setter Property="PlaceholderColor" Value="{StaticResource InactiveTextColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>
-                <Setter Property="FontFamily" Value="Surface-Medium"/>
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="Comfortaa-Regular"/>
+                <Setter Property="FontSize" Value="Medium"/>
             </Style>
 
         </ResourceDictionary>        

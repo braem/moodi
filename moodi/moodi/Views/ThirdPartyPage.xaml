@@ -13,52 +13,65 @@
         </Style>
     </ContentPage.Resources>
 
-    <StackLayout VerticalOptions="Center" Padding="20" Spacing="20">
-        <Frame>
-            <StackLayout>
-                <Label Text="Xamarin Forms" FontSize="30"/>
-                <Label Text="MIT License"/>
+    <StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <Frame>
+                    <StackLayout>
+                        <Label Text="Xamarin Forms" FontSize="Large"/>
+                        <Label Text="MIT License"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenXamarinFormsRepo}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="Xamarin FFImageLoading" FontSize="Large"/>
+                        <Label Text="MIT License"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFFImageLoadingRepo}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="CoreUI Icons" FontSize="Large"/>
+                        <Label Text="CC BY 4.0 License"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenCoreUIRepo}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="Comfortaa Font" FontSize="Large"/>
+                        <Label Text="SIL Open Font License v1.10"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenComfortaaLink}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="SQLite.Net PCL" FontSize="Large"/>
+                        <Label Text="MIT License"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenSQLiteNetRepo}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Label Text="Skiasharp" FontSize="Large"/>
+                        <Label Text="MIT License"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenSkiasharpRepo}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
             </StackLayout>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OpenXamarinFormsRepo}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-        <Frame>
-            <StackLayout>
-                <Label Text="Xamarin FFImageLoading" FontSize="30"/>
-                <Label Text="MIT License"/>
-            </StackLayout>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OpenFFImageLoadingRepo}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-        <Frame>
-            <StackLayout>
-                <Label Text="CoreUI Icons" FontSize="30"/>
-                <Label Text="CC BY 4.0 License"/>
-            </StackLayout>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OpenCoreUIRepo}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-        <Frame>
-            <StackLayout>
-                <Label Text="SQLite.Net PCL" FontSize="30"/>
-                <Label Text="MIT License"/>
-            </StackLayout>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OpenSQLiteNetRepo}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
-        <Frame>
-            <StackLayout>
-                <Label Text="Skiasharp" FontSize="30"/>
-                <Label Text="MIT License"/>
-            </StackLayout>
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OpenSkiasharpRepo}"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>

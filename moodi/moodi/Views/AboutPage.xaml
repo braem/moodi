@@ -23,7 +23,7 @@
                 <Label Text="moodi is a free and open source app for tracking moods."/>
 
                 <StackLayout Orientation="Vertical">
-                    <Label Text="Author(s):" FontSize="30" HorizontalOptions="Center"/>
+                    <Label Text="Author(s):" FontSize="Large" HorizontalOptions="Center"/>
                     <Frame Padding="5,5,5,5">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -31,9 +31,9 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding Author}" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="23" Padding="5,5,5,5"/>
+                            <Label Text="{Binding Author}" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Medium" Padding="5,5,5,5"/>
                             <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End" Spacing="15">
-                                <Frame BackgroundColor="{StaticResource TertiaryColor}" Padding="5,5,5,5" HeightRequest="25" WidthRequest="25">
+                                <Frame BackgroundColor="{StaticResource TertiaryColor}" Padding="5,5,5,5" HeightRequest="25" WidthRequest="35">
                                     <ff:TintedCachedImage SvgSource="github.svg"
                                         TintColor="{StaticResource PrimaryColor}"
                                         HorizontalOptions="Center"
@@ -42,7 +42,7 @@
                                         <TapGestureRecognizer Command="{Binding OpenGHProfile}"/>
                                     </Frame.GestureRecognizers>
                                 </Frame>
-                                <Frame BackgroundColor="{StaticResource TertiaryColor}" Padding="5,5,5,5" HeightRequest="25" WidthRequest="25">
+                                <Frame BackgroundColor="{StaticResource TertiaryColor}" Padding="5,5,5,5" HeightRequest="25" WidthRequest="35">
                                     <ff:TintedCachedImage SvgSource="twitter.svg"
                                         TintColor="{StaticResource PrimaryColor}"
                                         HorizontalOptions="Center"
