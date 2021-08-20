@@ -32,7 +32,9 @@
 
                             <Label Text="{Binding Author}" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Medium" Padding="5,5,5,5"/>
                             <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End" Spacing="15">
-                                <Frame BackgroundColor="{StaticResource TertiaryColor}" Padding="5,5,5,5" HeightRequest="25" WidthRequest="35">
+                                <Frame BackgroundColor="{StaticResource TertiaryColor}"
+                                       Padding="5,5,5,5" HeightRequest="25" WidthRequest="35"
+                                       Style="{StaticResource FrameButton}">
                                     <ff:TintedCachedImage SvgSource="github.svg"
                                         TintColor="{StaticResource PrimaryColor}"
                                         HorizontalOptions="Center"
@@ -41,7 +43,9 @@
                                         <TapGestureRecognizer Command="{Binding OpenGHProfile}"/>
                                     </Frame.GestureRecognizers>
                                 </Frame>
-                                <Frame BackgroundColor="{StaticResource TertiaryColor}" Padding="5,5,5,5" HeightRequest="25" WidthRequest="35">
+                                <Frame BackgroundColor="{StaticResource TertiaryColor}"
+                                       Padding="5,5,5,5" HeightRequest="25" WidthRequest="35"
+                                       Style="{StaticResource FrameButton}">
                                     <ff:TintedCachedImage SvgSource="twitter.svg"
                                         TintColor="{StaticResource PrimaryColor}"
                                         HorizontalOptions="Center"

@@ -24,7 +24,8 @@
                     HeightRequest="60" WidthRequest="60"/>
 
                 <Frame Grid.Column="1" HeightRequest="50" WidthRequest="50" CornerRadius="50" Padding="0" Margin="0"
-                    BackgroundColor="{StaticResource TertiaryColor}" HorizontalOptions="End" VerticalOptions="Center" IsClippedToBounds="False">
+                    BackgroundColor="{StaticResource TertiaryColor}" HorizontalOptions="End" VerticalOptions="Center" IsClippedToBounds="False"
+                    Style="{StaticResource FrameButton}">
                     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                         <ff:TintedCachedImage
                         SvgSource="trash.svg" TintColor="{StaticResource PrimaryColor}"
