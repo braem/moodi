@@ -63,6 +63,10 @@
 
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                            <ff:TintedCachedImage SvgSource="bug.svg"
+                                                  TintColor="{StaticResource PrimaryColor}"
+                                                  HorizontalOptions="Center"
+                                                  HeightRequest="30" WidthRequest="30"/>
                             <Label Text="Report a bug" VerticalTextAlignment="Center"/>
                         </StackLayout>
                         <Line HeightRequest="1" BackgroundColor="{StaticResource QuaternaryColor}"/>
@@ -74,6 +78,10 @@
 
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                            <ff:TintedCachedImage SvgSource="code.svg"
+                                                  TintColor="{StaticResource PrimaryColor}"
+                                                  HorizontalOptions="Center"
+                                                  HeightRequest="30" WidthRequest="30"/>
                             <Label Text="Source code" VerticalTextAlignment="Center"/>
                         </StackLayout>
 
