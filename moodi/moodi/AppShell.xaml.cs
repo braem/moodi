@@ -10,7 +10,6 @@ namespace moodi
             InitializeComponent();
             Routing.RegisterRoute(nameof(MoodEntryDetailPage), typeof(MoodEntryDetailPage));
             Routing.RegisterRoute(nameof(NewMoodEntryPage), typeof(NewMoodEntryPage));
-            Routing.RegisterRoute(nameof(ThirdPartyPage), typeof(ThirdPartyPage));
             Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
 
             SetTabBarIsVisible(this, false);
