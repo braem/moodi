@@ -111,6 +111,18 @@
 
                     <StackLayout>
                         <StackLayout Spacing="0">
+                            <Label Text="Xamarin Community Toolkit"/>
+                            <Label Text="MIT License" FontSize="Small" TextColor="{StaticResource InactiveTextColor}"/>
+                        </StackLayout>
+                        <Line HeightRequest="1" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenXamarinCommToolkitRepo}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Spacing="0">
                             <Label Text="Xamarin FFImageLoading"/>
                             <Label Text="MIT License" FontSize="Small" TextColor="{StaticResource InactiveTextColor}"/>
                         </StackLayout>

@@ -32,6 +32,7 @@ namespace moodi.ViewModels
         public Command OpenIssues { get; }
 
         public Command OpenXamarinFormsRepo { get; }
+        public Command OpenXamarinCommToolkitRepo { get; }
         public Command OpenFFImageLoadingRepo { get; }
         public Command OpenCoreUIRepo { get; }
         public Command OpenComfortaaLink { get; }
@@ -51,6 +52,7 @@ namespace moodi.ViewModels
             OpenGitHubRepo = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi"));
 
             OpenXamarinFormsRepo = new Command(async () => await Browser.OpenAsync("https://github.com/xamarin/Xamarin.Forms"));
+            OpenXamarinCommToolkitRepo = new Command(async () => await Browser.OpenAsync("https://github.com/xamarin/XamarinCommunityToolkit"));
             OpenFFImageLoadingRepo = new Command(async () => await Browser.OpenAsync("https://github.com/luberda-molinet/FFImageLoading"));
             OpenCoreUIRepo = new Command(async () => await Browser.OpenAsync("https://github.com/coreui/coreui-icons"));
             OpenComfortaaLink = new Command(async () => await Browser.OpenAsync("https://www.fontsquirrel.com/fonts/Comfortaa"));
