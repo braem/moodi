@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="moodi.Views.SettingsPage"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms"
+             xmlns:local="clr-namespace:moodi.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <local:SettingsViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Style" Value="{StaticResource FrameButton}"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <ScrollView>
+            <StackLayout Padding="15" Spacing="15">
+                <Frame>
+                    <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                        <ff:TintedCachedImage SvgSource="info.svg"
+                                              TintColor="{StaticResource PrimaryColor}"
+                                              HorizontalOptions="Center"
+                                              HeightRequest="30" WidthRequest="30"/>
+                        <Label Text="About" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenAboutPage}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

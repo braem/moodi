@@ -13,7 +13,7 @@
     </ContentPage.BindingContext>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="info.png" Command="{Binding SettingsTapped}"/>
+        <ToolbarItem IconImageSource="settings.png" Command="{Binding SettingsTapped}"/>
     </ContentPage.ToolbarItems>
 
     <StackLayout>

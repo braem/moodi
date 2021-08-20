@@ -104,8 +104,6 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\splash_screen.9.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\splash_screen.9.png" />
-    <AndroidResource Include="Resources\drawable\info.png" />
-    <AndroidResource Include="Resources\drawable\list.png" />
     <AndroidResource Include="Resources\drawable\moodi_logo.png" />
     <AndroidResource Include="Resources\drawable\verygood.svg" />
     <AndroidResource Include="Resources\drawable\good.svg" />
@@ -131,6 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\code.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\info.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
