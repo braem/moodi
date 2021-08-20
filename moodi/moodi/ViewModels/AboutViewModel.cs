@@ -48,7 +48,7 @@ namespace moodi.ViewModels
 
             OpenGHProfile = new Command(async () => await Browser.OpenAsync("https://github.com/braem"));
             OpenTwitterProfile = new Command(async () => await Browser.OpenAsync("https://twitter.com/braemie"));
-            OpenIssues = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi/issues"));
+            OpenIssues = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi/issues/new/choose"));
             OpenGitHubRepo = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi"));
 
             OpenXamarinFormsRepo = new Command(async () => await Browser.OpenAsync("https://github.com/xamarin/Xamarin.Forms"));
