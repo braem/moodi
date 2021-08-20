@@ -43,7 +43,7 @@
         <Line HeightRequest="2" BackgroundColor="{StaticResource QuaternaryColor}"/>
 
         <Label Text="Notes:" FontSize="24"/>
-        <Label Text="{Binding Mood.Notes}" FontSize="20"/>
+        <Label Text="{Binding Mood.Notes}" FontSize="20" LineHeight="1.25"/>
 
     </StackLayout>
 
