@@ -22,8 +22,7 @@
 
                 <Label Text="moodi is a free and open source app for tracking moods."/>
 
-                <StackLayout Orientation="Vertical">
-                    <Label Text="Author(s):" FontSize="Large" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Vertical" Spacing="0">
                     <Frame Padding="5,5,5,5">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -56,10 +55,110 @@
                     </Frame>
                 </StackLayout>
 
-                <StackLayout Orientation="Vertical" Spacing="10" Margin="0,20,0,0">
-                    <Button Text="Source Code" Command="{Binding OpenGitHubRepo}"/>
-                    <Button Text="License" Command="{Binding OpenLicense}"/>
-                    <Button Text="Third Party Libraries" Command="{Binding OpenThirdPartyPage}"/>
+                <StackLayout Spacing="5">
+                    <StackLayout Margin="0,0,0,15" Spacing="0">
+                        <Label Text="Contribute" FontSize="Large" TextColor="{StaticResource PrimaryColor}"/>
+                        <Line HeightRequest="2" BackgroundColor="{StaticResource TertiaryColor}"/>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                            <Label Text="Report a bug" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Line HeightRequest="1" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenIssues}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                            <Label Text="Source code" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenGitHubRepo}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Spacing="5">
+                    <StackLayout Margin="0,0,0,15" Spacing="0">
+                        <Label Text="Third Party Libraries" FontSize="Large" TextColor="{StaticResource PrimaryColor}"/>
+                        <Line HeightRequest="2" BackgroundColor="{StaticResource TertiaryColor}"/>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Spacing="0">
+                            <Label Text="Xamarin Forms"/>
+                            <Label Text="MIT License" FontSize="Small" TextColor="{StaticResource InactiveTextColor}"/>
+                        </StackLayout>
+                        <Line HeightRequest="1" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenXamarinFormsRepo}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Spacing="0">
+                            <Label Text="Xamarin FFImageLoading"/>
+                            <Label Text="MIT License" FontSize="Small" TextColor="{StaticResource InactiveTextColor}"/>
+                        </StackLayout>
+                        <Line HeightRequest="1" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenFFImageLoadingRepo}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Spacing="0">
+                            <Label Text="CoreUI Icons"/>
+                            <Label Text="CC BY 4.0 License" FontSize="Small" TextColor="{StaticResource InactiveTextColor}"/>
+                        </StackLayout>
+                        <Line HeightRequest="1" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenCoreUIRepo}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Spacing="0">
+                            <Label Text="Comfortaa Font"/>
+                            <Label Text="SIL Open Font License v1.10" FontSize="Small" TextColor="{StaticResource InactiveTextColor}"/>
+                        </StackLayout>
+                        <Line HeightRequest="1" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenComfortaaLink}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Spacing="0">
+                            <Label Text="SQLite.Net PCL"/>
+                            <Label Text="MIT License" FontSize="Small" TextColor="{StaticResource InactiveTextColor}"/>
+                        </StackLayout>
+                        <Line HeightRequest="1" BackgroundColor="{StaticResource QuaternaryColor}"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenSQLiteNetRepo}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Spacing="0">
+                            <Label Text="Skiasharp"/>
+                            <Label Text="MIT License" FontSize="Small" TextColor="{StaticResource InactiveTextColor}"/>
+                        </StackLayout>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenSkiasharpRepo}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

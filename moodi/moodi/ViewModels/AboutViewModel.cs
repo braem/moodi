@@ -29,8 +29,14 @@ namespace moodi.ViewModels
         public Command OpenGHProfile { get; }
         public Command OpenTwitterProfile { get; }
         public Command OpenGitHubRepo { get; }
-        public Command OpenLicense { get; }
-        public Command OpenThirdPartyPage { get; }
+        public Command OpenIssues { get; }
+
+        public Command OpenXamarinFormsRepo { get; }
+        public Command OpenFFImageLoadingRepo { get; }
+        public Command OpenCoreUIRepo { get; }
+        public Command OpenComfortaaLink { get; }
+        public Command OpenSQLiteNetRepo { get; }
+        public Command OpenSkiasharpRepo { get; }
 
         public AboutViewModel()
         {
@@ -39,11 +45,17 @@ namespace moodi.ViewModels
             CurrentVersion = VersionTracking.CurrentVersion + " Alpha";
             License = "MIT License";
 
-            OpenGitHubRepo = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi"));
-            OpenLicense = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi/blob/master/LICENSE"));
-            OpenThirdPartyPage = new Command(async () => await Shell.Current.GoToAsync(nameof(ThirdPartyPage)));
             OpenGHProfile = new Command(async () => await Browser.OpenAsync("https://github.com/braem"));
             OpenTwitterProfile = new Command(async () => await Browser.OpenAsync("https://twitter.com/braemie"));
+            OpenIssues = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi/issues"));
+            OpenGitHubRepo = new Command(async () => await Browser.OpenAsync("https://github.com/braem/moodi"));
+
+            OpenXamarinFormsRepo = new Command(async () => await Browser.OpenAsync("https://github.com/xamarin/Xamarin.Forms"));
+            OpenFFImageLoadingRepo = new Command(async () => await Browser.OpenAsync("https://github.com/luberda-molinet/FFImageLoading"));
+            OpenCoreUIRepo = new Command(async () => await Browser.OpenAsync("https://github.com/coreui/coreui-icons"));
+            OpenComfortaaLink = new Command(async () => await Browser.OpenAsync("https://www.fontsquirrel.com/fonts/Comfortaa"));
+            OpenSQLiteNetRepo = new Command(async () => await Browser.OpenAsync("https://github.com/oysteinkrog/SQLite.Net-PCL"));
+            OpenSkiasharpRepo = new Command(async () => await Browser.OpenAsync("https://github.com/mono/SkiaSharp"));
         }
     }
 }
