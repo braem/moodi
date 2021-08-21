@@ -64,6 +64,7 @@ namespace moodi.ViewModels
 
             if (SelectedMood != null) // previously selected mood
             {
+                // TODO: more performant way of doing this? can we get the index somehow?
                 var prevMoodImgIndex = MoodImages.FindIndex(x => x == SelectedMood);
                 if (prevMoodImgIndex != -1)
                 {
@@ -86,8 +87,7 @@ namespace moodi.ViewModels
             {
                 Date = DateTime.Now,
                 Notes = Notes == null || Notes.Length == 0 ? "<No Note>" : Notes,
-                MoodImageSvgPath = SelectedMood.SvgPath,
-                MoodImageSvgHexColor = SelectedMood.SvgHexColor
+                MoodLevel = MoodImages.FindIndex(x => x == SelectedMood)
             };
 
             await App.Database.SaveMoodEntry(newEntry);
