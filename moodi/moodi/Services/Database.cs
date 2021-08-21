@@ -5,11 +5,11 @@ using moodi.Models;
 
 namespace moodi.Services
 {
-    public class MoodEntryDatabase
+    public class Database
     {
         readonly SQLiteAsyncConnection database;
 
-        public MoodEntryDatabase(string dbPath)
+        public Database(string dbPath)
         {
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<MoodEntry>().Wait();
