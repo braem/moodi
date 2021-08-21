@@ -68,6 +68,9 @@ namespace moodi.ViewModels
                 tempList.Sort((x, y) => y.Date.CompareTo(x.Date));
                 foreach (var entry in tempList)
                 {
+                    var moodImage = MoodImageStore.MoodImages[entry.MoodLevel];
+                    entry.MoodImageSvgPath = moodImage.SvgPath;
+                    entry.MoodImageSvgHexColor = moodImage.SvgHexColor;
                     MoodEntries.Add(entry);
                 }
             }

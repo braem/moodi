@@ -41,6 +41,12 @@ namespace moodi.ViewModels
             try
             {
                 var entry = await App.Database.GetMoodEntry(moodEntryID);
+
+                // load image info from mood image store
+                var moodImage = MoodImageStore.MoodImages[entry.MoodLevel];
+                entry.MoodImageSvgPath = moodImage.SvgPath;
+                entry.MoodImageSvgHexColor = moodImage.SvgHexColor;
+
                 Mood = entry;
 
                 Title = "Entry for " + entry.Date.ToString("MMM/d/yyyy");
