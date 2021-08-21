@@ -4,12 +4,12 @@ using moodi.Models;
 
 namespace moodi.Services
 {
-    public static class MoodImageStore
+    public class MoodImageStore
     {
-        private static List<MoodImage> _moodImages;
-        public static List<MoodImage> MoodImages { get { return _moodImages; } }
+        private List<MoodImage> _moodImages;
+        public List<MoodImage> MoodImages { get { return _moodImages; } }
 
-        public static void Init()
+        public void Init()
         {
             // TODO: Allow for 5 mood vs. 7 mood preset in user preferences
             _moodImages = new List<MoodImage>();

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using FFImageLoading.Svg.Forms;
 using moodi.Models;
-using moodi.Services;
 
 namespace moodi.ViewModels
 {
@@ -30,7 +29,7 @@ namespace moodi.ViewModels
 
             MoodSVGImages = new List<SvgCachedImage>();
 
-            MoodImages = MoodImageStore.MoodImages;
+            MoodImages = App.MoodImageStore.MoodImages;
 
             PropertyChanged += (_, __) => SaveCommand.ChangeCanExecute();
         }

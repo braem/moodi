@@ -43,7 +43,7 @@ namespace moodi.ViewModels
                 var entry = await App.Database.GetMoodEntry(moodEntryID);
 
                 // load image info from mood image store
-                var moodImage = MoodImageStore.MoodImages[entry.MoodLevel];
+                var moodImage = App.MoodImageStore.MoodImages[entry.MoodLevel];
                 entry.MoodImageSvgPath = moodImage.SvgPath;
                 entry.MoodImageSvgHexColor = moodImage.SvgHexColor;
 
