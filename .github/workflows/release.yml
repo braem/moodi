@@ -1,0 +1,53 @@
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
+
+name: Manual Release
+jobs:
+  manual_release:
+    runs-on: ubuntu-latest
+    
+    env:
+      APPLICATION_NAME: moodi
+      
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Download Artifact from latest workflow run
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: build.yml
+          workflow_conclusion: success
+      
+      - name: Zip APK
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          path: ${{ env.APPLICATION_NAME }}-android
+          filename: 'apk.zip'
+
+      - name: Create Draft Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          release_name: ${{ github.event.inputs.version }}
+          body_path: CHANGELOG_CURRENT.md
+          draft: true
+          prerelease: false
+
+      - name: Upload APK Zip to Release
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./apk.zip
+          asset_name: apk.zip
+          asset_content_type: application/zip
