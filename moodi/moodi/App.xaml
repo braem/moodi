@@ -65,6 +65,13 @@
                 <Setter Property="FontSize" Value="Medium"/>
             </Style>
 
+            <Style x:Key="NavBarTitle" TargetType="Label">
+                <Setter Property="FontFamily" Value="Comfortaa-Bold"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="Text" Value="{Binding Title}"/>
+            </Style>
+
             <Style TargetType="Entry">
                 <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource QuaternaryColor}"/>

@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="moodi.Views.SettingsPage"
              xmlns:ff="clr-namespace:FFImageLoading.Forms"
-             xmlns:local="clr-namespace:moodi.ViewModels"
-             Title="{Binding Title}">
+             xmlns:local="clr-namespace:moodi.ViewModels">
+
+    <Shell.TitleView>
+        <Label Style="{StaticResource NavBarTitle}"/>
+    </Shell.TitleView>
 
     <ContentPage.BindingContext>
         <local:SettingsViewModel/>

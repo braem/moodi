@@ -3,14 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="moodi.Views.NewMoodEntryPage"
              Shell.PresentationMode="ModalAnimated"
-             Title="{Binding Title}" 
-             xmlns:ff="clr-namespace:FFImageLoading.Forms"  
              xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:local="clr-namespace:moodi.ViewModels"
              xmlns:model="clr-namespace:moodi.Models"
-             ios:Page.UseSafeArea="true"
-             x:Name="NewMoodEntryPagey">
+             ios:Page.UseSafeArea="true">
 
     <ContentPage.BindingContext>
         <local:NewMoodEntryViewModel/>
